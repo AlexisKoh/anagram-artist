@@ -51,3 +51,4 @@ function updateStats() {
 }
 
 updateStats();
+let WORDS = JSON.parse(localStorage.getItem("words") || "[]");
