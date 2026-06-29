@@ -24,3 +24,20 @@ function importFile(event) {
 
   reader.readAsText(file);
 }
+function addManual() {
+  const text = document.getElementById("manual").value;
+
+  const newWords = text
+    .toUpperCase()
+    .split("\n")
+    .map(w => w.trim())
+    .filter(w => /^[A-Z]{5}$/.test(w));
+
+  WORDS.push(...newWords);
+  WORDS = [...new Set(WORDS)];
+
+  saveWords();
+
+  document.getElementById("manual").value = "";
+  alert("Added " + newWords.length + " words!");
+}
