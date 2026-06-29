@@ -1,3 +1,16 @@
+function start() {
+  console.log("START CLICKED");
+
+  started = true;
+
+  const dash = document.getElementById("dashboard");
+  const game = document.getElementById("game");
+
+  if (dash) dash.classList.add("hidden");
+  if (game) game.classList.remove("hidden");
+
+  next();
+}
 let WORDS = JSON.parse(localStorage.getItem("words") || "[]");
 
 let current = "";
