@@ -11,6 +11,10 @@ function start() {
 }
 
 function pick() {
+  if (!WORDS || WORDS.length === 0) {
+    document.getElementById("card").innerText = "NO WORDS FOUND";
+    return;
+  }
   current = WORDS[Math.floor(Math.random() * WORDS.length)];
   document.getElementById("card").innerText = current;
 }
@@ -39,8 +43,11 @@ function star() {
 }
 
 function updateStats() {
-  document.getElementById("stats").innerText =
-    `XP: ${xp} | ✔ ${correctCount} ✘ ${wrongCount} | ⭐ ${stars.length}`;
+  const stats = document.getElementById("stats");
+  if (stats) {
+    stats.innerText =
+      `XP: ${xp} | ✔ ${correctCount} ✘ ${wrongCount} | ⭐ ${stars.length}`;
+  }
 }
 
 updateStats();
