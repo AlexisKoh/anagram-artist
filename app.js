@@ -1,3 +1,4 @@
+console.log("Anagram Artist loaded");
 function start() {
   console.log("START CLICKED");
 
